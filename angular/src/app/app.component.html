@@ -1,0 +1,22 @@
+<div class="container-uploader">
+
+  <h2>Using CNN in Angular</h2>
+
+  <div class="upload" [hidden]="!model">
+    Upload image to classify: <input #fileUpload type="file" id="files" name="files[]" (change)="fileChangeEvent($event)" />
+  </div>
+
+  <div>
+    <img #chosenImage width="224" height="224" class="uploaded-image" />
+    <div class="predictions-results">
+      <div *ngFor="let class of classes" class="row">
+        <div class="col-sm-6">
+          {{class.className}}
+        </div>
+        <div class="col-sm-6">
+          {{class.probability.toFixed(3)}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
